@@ -1,3 +1,14 @@
+# Airbnb JavaScript Style Guide
+
+
+## What is a style guide?
+	A style guide is a set of standards that outline how code should be written and organized. As you read through these guides, you can get an idea for how code is written at the respective companies.
+	
+## Why do we need style guides?
+	For one main reason: Everyone writes code differently. I may like to do something one way, and you may like to do it a different way. That’s all fine and dandy as long as we each work on our code. But what happens when you have 10, 100, or even 1,000 developers all working on the same codebase? Things get messy very quickly. Style guides are created so new developers can get up to speed on a code base quickly, and then write code that other developers can understand quickly and easily!
+
+	
+  
 ## References
 
   <a name="references--prefer-const"></a><a name="2.1"></a>

@@ -172,6 +172,10 @@
     const foo = 'superLongLongLongLongLongLongLongLongString';
     ```
 	
+	```javascript
+	const MAX_FILE_SIZE = 1024;
+	```
+	
 ## Comparison Operators & Equality
 
   <a name="comparison--eqeqeq"></a><a name="15.1"></a>
@@ -433,6 +437,189 @@
     }
     ```
 	
+## Whitespace
+
+  <a name="whitespace--spaces"></a><a name="18.1"></a>
+  - [19.1](#whitespace--spaces) Use soft tabs (space character) set to 2 spaces. eslint: [`indent`](https://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
+
+    ```javascript
+    // bad
+    function foo() {
+    ∙∙∙∙let name;
+    }
+
+    // bad
+    function bar() {
+    ∙let name;
+    }
+
+    // good
+    function baz() {
+    ∙∙let name;
+    }
+    ```
+
+  <a name="whitespace--before-blocks"></a><a name="18.2"></a>
+  - [19.2](#whitespace--before-blocks) Place 1 space before the leading brace. eslint: [`space-before-blocks`](https://eslint.org/docs/rules/space-before-blocks.html) jscs: [`requireSpaceBeforeBlockStatements`](http://jscs.info/rule/requireSpaceBeforeBlockStatements)
+
+    ```javascript
+    // bad
+    function test(){
+      console.log('test');
+    }
+
+    // good
+    function test() {
+      console.log('test');
+    }
+
+    // bad
+    dog.set('attr',{
+      age: '1 year',
+      breed: 'Bernese Mountain Dog',
+    });
+
+    // good
+    dog.set('attr', {
+      age: '1 year',
+      breed: 'Bernese Mountain Dog',
+    });
+    ```
+
+  <a name="whitespace--infix-ops"></a><a name="18.4"></a>
+  - [19.3](#whitespace--infix-ops) Set off operators with spaces. eslint: [`space-infix-ops`](https://eslint.org/docs/rules/space-infix-ops.html) jscs: [`requireSpaceBeforeBinaryOperators`](http://jscs.info/rule/requireSpaceBeforeBinaryOperators), [`requireSpaceAfterBinaryOperators`](http://jscs.info/rule/requireSpaceAfterBinaryOperators)
+
+    ```javascript
+    // bad
+    const x=y+5;
+
+    // good
+    const x = y + 5;
+    ```
+
+  <a name="whitespace--newline-at-end"></a><a name="18.5"></a>
+  - [19.4](#whitespace--newline-at-end) End files with a single newline character. eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
+
+    ```javascript
+    // bad
+    import { es6 } from './AirbnbStyleGuide';
+      // ...
+    export default es6;
+    ```
+
+    ```javascript
+    // bad
+    import { es6 } from './AirbnbStyleGuide';
+      // ...
+    export default es6;↵
+    ↵
+    ```
+
+    ```javascript
+    // good
+    import { es6 } from './AirbnbStyleGuide';
+      // ...
+    export default es6;↵
+    ```
+
+  - [19.5](#whitespace--after-blocks) Leave a blank line after blocks and before the next statement. jscs: [`requirePaddingNewLinesAfterBlocks`](http://jscs.info/rule/requirePaddingNewLinesAfterBlocks)
+
+    ```javascript
+    // bad
+    if (foo) {
+      return bar;
+    }
+    return baz;
+
+    // good
+    if (foo) {
+      return bar;
+    }
+
+    return baz;
+    ```
+
+  <a name="whitespace--padded-blocks"></a><a name="18.8"></a>
+  - [19.6](#whitespace--padded-blocks) Do not pad your blocks with blank lines. eslint: [`padded-blocks`](https://eslint.org/docs/rules/padded-blocks.html) jscs:  [`disallowPaddingNewlinesInBlocks`](http://jscs.info/rule/disallowPaddingNewlinesInBlocks)
+
+    ```javascript
+    // bad
+    function bar() {
+
+      console.log(foo);
+
+    }
+
+    // bad
+    if (baz) {
+
+      console.log(qux);
+    } else {
+      console.log(foo);
+
+    }
+
+    // good
+    function bar() {
+      console.log(foo);
+    }
+
+    // good
+    if (baz) {
+      console.log(qux);
+    } else {
+      console.log(foo);
+    }
+    ```
+
+  <a name="whitespace--in-parens"></a><a name="18.9"></a>
+  - [19.7](#whitespace--in-parens) Do not add spaces inside parentheses. eslint: [`space-in-parens`](https://eslint.org/docs/rules/space-in-parens.html) jscs: [`disallowSpacesInsideParentheses`](http://jscs.info/rule/disallowSpacesInsideParentheses)
+
+    ```javascript
+    // bad
+    function bar( foo ) {
+      return foo;
+    }
+
+    // good
+    function bar(foo) {
+      return foo;
+    }
+
+    // bad
+    if ( foo ) {
+      console.log(foo);
+    }
+
+    // good
+    if (foo) {
+      console.log(foo);
+    }
+    ```
+
+  <a name="whitespace--in-brackets"></a><a name="18.10"></a>
+  - [19.8](#whitespace--in-brackets) Do not add spaces inside brackets. eslint: [`array-bracket-spacing`](https://eslint.org/docs/rules/array-bracket-spacing.html) jscs: [`disallowSpacesInsideArrayBrackets`](http://jscs.info/rule/disallowSpacesInsideArrayBrackets)
+
+    ```javascript
+    // bad
+    const foo = [ 1, 2, 3 ];
+    console.log(foo[ 0 ]);
+
+    // good
+    const foo = [1, 2, 3];
+    console.log(foo[0]);
+    ```
+
+  <a name="whitespace--in-braces"></a><a name="18.11"></a>
+  - [19.10](#whitespace--in-braces) Add spaces inside curly braces. eslint: [`object-curly-spacing`](https://eslint.org/docs/rules/object-curly-spacing.html) jscs: [`requireSpacesInsideObjectBrackets`](http://jscs.info/rule/requireSpacesInsideObjectBrackets)
+
+    ```javascript
+    // bad
+    const foo = {clark: 'kent'};
+
+    // good
+    const foo = { clark: 'kent' };
+    ```
 	
 ## Commas
 
@@ -631,4 +818,47 @@
     // good
     import CheckBox from './CheckBox'; // PascalCase export/import/filename
     ```
+## Accessors
 
+
+  <a name="accessors--no-getters-setters"></a><a name="23.2"></a>
+  - [24.1](#accessors--no-getters-setters) Do not use JavaScript getters/setters as they cause unexpected side effects and are harder to test, maintain, and reason about. Instead, if you do make accessor functions, use getVal() and setVal('hello').
+
+    ```javascript
+    // bad
+    class Dragon {
+      get age() {
+        // ...
+      }
+
+      set age(value) {
+        // ...
+      }
+    }
+
+    // good
+    class Dragon {
+      getAge() {
+        // ...
+      }
+
+      setAge(value) {
+        // ...
+      }
+    }
+    ```
+
+  <a name="accessors--boolean-prefix"></a><a name="23.3"></a>
+  - [24.2](#accessors--boolean-prefix) If the property/method is a `boolean`, use `isVal()` or `hasVal()`.
+
+    ```javascript
+    // bad
+    if (!dragon.age()) {
+      return false;
+    }
+
+    // good
+    if (!dragon.hasAge()) {
+      return false;
+    }
+    ```

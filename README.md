@@ -58,10 +58,6 @@
     > Why? This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
 
     ```javascript
-    // bad
-    let i, len, dragonball,
-        items = getItems(),
-        goSportsTeam = true;
 
     // bad
     let i;
@@ -155,9 +151,6 @@
     > Why? Linebreaks surrounding `=` can obfuscate the value of an assignment.
 
     ```javascript
-    // bad
-    const foo =
-      superLongLongLongLongLongLongLongLongFunctionName();
 
     // bad
     const foo
@@ -168,19 +161,23 @@
       superLongLongLongLongLongLongLongLongFunctionName()
     );
 
-    // good
-    const foo = 'superLongLongLongLongLongLongLongLongString';
     ```
 	
-	```javascript
-	const MAX_FILE_SIZE = 1024;
-	```
 	
 ## Comparison Operators & Equality
 
   <a name="comparison--eqeqeq"></a><a name="15.1"></a>
   - [15.1](#comparison--eqeqeq) Use `===` and `!==` over `==` and `!=`. eslint: [`eqeqeq`](https://eslint.org/docs/rules/eqeqeq.html)
 
+    ```javascript
+    
+    const a = null;
+    const b = undefined;
+    
+    console.log(a == b); // true
+    console.log(a === b); // false
+    ```
+    
   <a name="comparison--if"></a><a name="15.2"></a>
   - [15.2](#comparison--if) Conditional statements such as the `if` statement evaluate their expression using coercion with the `ToBoolean` abstract method and always follow these simple rules:
 
@@ -817,6 +814,11 @@
 
     // good
     import CheckBox from './CheckBox'; // PascalCase export/import/filename
+    ```
+    
+    
+    ```javascript
+    const MAX_FILE_SIZE = 1024;
     ```
 ## Accessors
 
